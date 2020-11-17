@@ -13,7 +13,7 @@ pip3 install -r requirements.txt
 # Functions
  -It has a Proxy Checker (you can check proxies with it on the given website).<br/>
  -It has a Proxy Filter (you can check proxies with it on the given website by the given timeout).<br/>
- -It has a Proxy Scraper from (proxyscrape.com API).<br/>
+ -It has a Proxy Scraper (scrapes from proxyscrape.com API).<br/>
  -It has a Duplicate Remover (works fast with huge files).
 
 # Legal
