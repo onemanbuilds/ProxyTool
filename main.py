@@ -15,8 +15,13 @@ def clear():
     else:
         print("\n") * 120
 
-def SetTitle(title_name:str):
-    system("title {0}".format(title_name))
+def SetTitle(title:str):
+    if name == 'posix':
+        stdout.write(f"\x1b]2;{title}\x07")
+    elif name in ('ce', 'nt', 'dos'):
+        system(f'title {title}')
+    else:
+        stdout.write(f"\x1b]2;{title}\x07")
 
 def GetRandomUserAgent():
     useragents = ReadFile('[Data]/useragents.txt','r')
@@ -130,8 +135,8 @@ class ProxyChecker:
         print('')
         PrintText(Fore.WHITE,Fore.GREEN,'PROXYCHECKER',f'TOTAL: {len(proxies)} GOOD: {self.goods} DEAD: {self.deads}')
         print('')
-        PrintText(Fore.WHITE,Fore.GREEN,'#','PRESS ANY KEY TO RETURN...')
-        system('pause > nul')
+        PrintText(Fore.WHITE,Fore.GREEN,'#','RETURNING TO THE MENU')
+        sleep(2)
 
 class ProxyFilter:
     def __init__(self):
@@ -208,8 +213,8 @@ class ProxyFilter:
         print('')
         PrintText(Fore.WHITE,Fore.GREEN,'PROXYFILTER',f'TOTAL: {len(proxies)} GOOD: {self.goods} DEAD: {self.deads}')
         print('')
-        PrintText(Fore.WHITE,Fore.GREEN,'#','PRESS ANY KEY TO RETURN...')
-        system('pause > nul')
+        PrintText(Fore.WHITE,Fore.GREEN,'#','RETURNING TO THE MENU')
+        sleep(2)
         
 class ProxyScrapeAPI:
     def GetCountry(self,country_code_option):
@@ -430,8 +435,8 @@ class ProxyScrapeAPI:
 
             PrintText(Fore.WHITE,Fore.GREEN,'PROXYSCRAPER',f'TOTAL: {proxies_length}')
             print('')
-            PrintText(Fore.WHITE,Fore.GREEN,'#','PRESS ANY KEY TO RETURN...')
-            system('pause > nul')
+            PrintText(Fore.WHITE,Fore.GREEN,'#','RETURNING TO THE MENU')
+            sleep(2)
         except:
             pass
 
@@ -465,8 +470,8 @@ class Main:
 
             PrintText(Fore.WHITE,Fore.GREEN,'#',f'STARTED: {started_length} / ENDED WITH: {final_length} / REMOVED: {started_length-final_length}')
             print('')
-            PrintText(Fore.WHITE,Fore.GREEN,'#','PRESS ANY KEY TO RETURN...')
-            system('pause > nul')
+            PrintText(Fore.WHITE,Fore.GREEN,'#','RETURNING TO THE MENU')
+            sleep(2)
         except:
             pass
 
@@ -514,6 +519,6 @@ class Main:
 if __name__ == "__main__":
     init(convert=True)
     lock = Lock()
-    SetTitle(f'[One Man Builds Proxy Tool] ^| LOADING...')
+    SetTitle('[One Man Builds Proxy Tool] ^| LOADING...')
     main = Main()
     main.Menu()
