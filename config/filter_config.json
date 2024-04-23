@@ -1,0 +1,7 @@
+{
+    "proxy_type":2,
+    "threads":1000,
+    "test_site":"https://google.com",
+    "max_timeout":100,
+    "filter_proxies_path":"config/filter_proxies.txt"
+}

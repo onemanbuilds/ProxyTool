@@ -1,0 +1,6 @@
+{
+    "proxy_type":2,
+    "threads":1000,
+    "test_site":"https://google.com",
+    "checker_proxies_path":"config/checker_proxies.txt"
+}

@@ -1,0 +1,7 @@
+{
+    "use_proxy":1,
+    "proxy_type":2,
+    "country_code":1,
+    "anonimity":1,
+    "timeout":10000
+}
